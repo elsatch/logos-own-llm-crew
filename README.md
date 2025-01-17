@@ -1,6 +1,7 @@
 # Logos - Your own LLM Crew
 
 Original version written 13 August 2023
+V2 - 17 January 2025
 
 TLDR; This is a conceptual framework for a personal crew of AI/LLM assistants
 
@@ -13,13 +14,15 @@ Each model will be assigned a persistent name and field of work like calendar ma
 ## Architecture
 This platform has several elements to fulfill its objectives:
 
-- RapidAPI: to convert external calls to archive contents into archivebox calls.
-- ArchiveBox: to store documents and websites in a consistent, standards compliant format.
-- Chroma: a vector database that stores embeddings of the contents of ArchiveBox
-- Text-generation-webui: to serve the LLMs
-- LangChain: to orchestrate the calls between all elements
-- Cron: to schedule periodic updates to the embeddings database
+- FastAPI: to convert external calls to archive contents into archivebox calls.
+- ArchiveBox: to store documents and websites in a consistent, standards compliant format
+- Milvus: a vector database that stores embeddings of the contents of ArchiveBox
+- LlamaIndex (or Haystack): to connect and interact with the embeddings database and the metadata index
+- Ollama: to serve the LLMs in a simple way
+- Prefect: to orchestrate the calls between all elements and schedule periodic updates to the embeddings database
+- Matrix: to chat with your assistants
 
+Note: Function callings / tool usage to be considered in the near future.
 ## Sample usage
 
 You have three different assistants:
